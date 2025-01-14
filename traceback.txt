@@ -1,0 +1,28 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 8, in script
+    define T = character("Tourist")
+  File "game/script.rpy", line 8, in <module>
+    define T = character("Tourist")
+NameError: name 'character' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 8, in script
+    define T = character("Tourist")
+  File "C:\Users\zandre375\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 2241, in execute
+    self.set()
+  File "C:\Users\zandre375\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 2255, in set
+    value = renpy.python.py_eval_bytecode(self.code.bytecode)
+  File "C:\Users\zandre375\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 8, in <module>
+    define T = character("Tourist")
+NameError: name 'character' is not defined
+
+Windows-10-10.0.19045 AMD64
+Ren'Py 8.3.4.24120703
+pr 1.0
+Mon Jan 13 15:47:29 2025
