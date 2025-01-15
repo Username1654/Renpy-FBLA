@@ -6,6 +6,8 @@
 define Z = Character("Zakiya")
 define D = Character("Damonica")
 define T = Character("Tourist")
+define gui.text_color = "#FFFFFF"  # White text
+define gui.interface_text_color = "#000000"  # Black background
 transform resize_bg:
     xsize 2000
     ysize 1200
@@ -283,11 +285,11 @@ label murder:
     hide zakiya
     show damonica happy at  closeright
     D "Yes! Then let’s get a move on!"
-    hide Z
+    hide damonica
     show bg red at resize_bg
     with fade
-    
-   
+    pause 1.5
+    scene bblack with fade
 return #murder end
 
 label  Smth:
@@ -347,11 +349,13 @@ label good:
     hide zakiya
     show damonica happy at  closeright
     D "Yes! Let’s!"
+    scene bblack  with fade
     return 
 
 label bad:
     hide damonica
     show zakiya confused at resize_sprite
     Z " I guess I do value you more than some silly thought…"
-
+scene bblack  with fade
 return #ending for smth
+
