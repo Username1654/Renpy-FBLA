@@ -1,4 +1,4 @@
-﻿# The script of the game goes in this file.
+# The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -236,7 +236,9 @@ label silly:
     hide damonica
     show zakiya confused at resize_sprite
     Z "Ghost noises, we should start with something simple so we can build up to something exciting!"
-    return #return for silly ending
+    Z "This is going to be so much fun!"
+    D "No…this is too boring… I’m going to give them hallucinations!!!"
+    jump jump
 
 
 label crazy:
@@ -248,11 +250,10 @@ label crazy:
     D "Sounds great!"
     hide damonica
     show zakiya confused at resize_sprite
+    label jump:
     Z "Alright then!"
     hide zakiya
-    show T happy at resize_sprite
     T "AAAAAAAAAAAAAAAA!!!"
-    hide T 
     
     show damonica happy at  closeright
     D "Yay!"
@@ -310,19 +311,47 @@ label  Smth:
     D "We don’t need to change if we have each other!"
     D "What’s up with this nonsense? There’s no reason for anything to change…lets keep what we already have and protect it!"
     menu: 
-        "Good":
+        "Stop cycle":
             $ pPoints += 1
         
-        "Terrible":
+        "Continue cycle":
             $ pPoints -= 1
 
 if pPoints == 1:
-    jump murder
+    jump good
 else :
-    jump Smth
+    jump bad
 
 label good:
+    hide damonica
+    show zakiya confused at resize_sprite
+    Z "Is it really okay to never change? We’re still kids because we don’t want to grow up. Isn’t it time we move on to the next level?"
+    hide zakiya
+    show damonica happy at  closeright
+    D "I just don’t want “us” to change!!!"
+    hide damonica
+    show zakiya confused at resize_sprite
+    Z " There’s no reason to be scared! Just because we’re changing doesn’t mean we need to separate!"
+    hide zakiya
+    show damonica happy at  closeright
+    D "Then…I could guess it’s fine…"
+    hide damonica
+    show zakiya confused at resize_sprite
+    Z " Let’s make it a promise then!"
+    hide zakiya
+    show damonica happy at  closeright
+    D " A promise is good…I’m glad…"
+    hide damonica
+    show zakiya confused at resize_sprite
+    Z "Let’s stay together for our eternity!!!"
+    hide zakiya
+    show damonica happy at  closeright
+    D "Yes! Let’s!"
+    return 
 
 label bad:
+    hide damonica
+    show zakiya confused at resize_sprite
+    Z " I guess I do value you more than some silly thought…"
 
 return #ending for smth
